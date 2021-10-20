@@ -1,19 +1,37 @@
-import {Box, Button, Paper, Typography} from "@mui/material"
+import {Box, Paper, Typography} from "@mui/material"
 import Carousel from "react-material-ui-carousel"
 import Navbar from "../components/Navbar"
+
+const buildCard = (cardDetailsObject: { title: String, text: String }) => {
+    return (
+        <Paper elevation={5}>
+            <Box padding={5} width={400}>
+                <Typography variant="h3" textAlign={'center'} fontFamily={'Oswald'}
+                            sx={{
+                                textDecoration: 'underline',
+                                marginBottom: 5
+                            }}>{cardDetailsObject.title}</Typography>
+                <Typography variant="body1" textAlign={'center'}
+                            fontFamily={'Prompt'}>{cardDetailsObject.text}</Typography>
+            </Box>
+        </Paper>
+    )
+}
 
 const LandingPage = () => {
     return (
         <Box>
             <Navbar/>
             {/* 1st section */}
-            <Box padding={10} marginX={'auto'} width={'100%'} maxWidth={800}>
+            <Box padding={10} marginX={'auto'} width={'100%'} maxWidth={1200}>
                 <Paper elevation={5}>
-                    <Box padding={5}>
-                        <Typography variant="h3" textAlign={'center'} fontFamily={'Oswald'}
-                                    sx={{textDecoration: 'underline', marginBottom: 5}}>Welcome to Drishti
+                    <Box padding={10}>
+                        <Typography variant="h2" textAlign={'center'} fontFamily={'Oswald'}
+                                    marginBottom={5}
+                                    sx={{textDecoration: 'underline'}}>Welcome to Drishti
                             CPS</Typography>
-                        <Typography variant="body1" textAlign={'center'} fontFamily={'Prompt'}>The Technology Innovation Hub (TIH) falls under
+                        <Typography variant="h6" textAlign={'center'} fontFamily={'Prompt'}>The Technology Innovation
+                            Hub (TIH) falls under
                             the
                             aegis of the
                             national mission on interdisciplinary cyber physical systems and is named IITI DRISHTI CPS
@@ -28,91 +46,131 @@ const LandingPage = () => {
             </Box>
 
             {/* 2nd section */}
-            <Box padding={10} display={'flex'} flexDirection={'column'} gap={10}>
-                <Box display={'flex'} gap={5}>
-                    <Box display={'flex'} flexDirection={'column'} flex={1} justifyContent={'center'}>
-                        <Typography variant="h3">VISION</Typography>
-                        <Typography variant="body1">To become a pioneering center in simulation, modelling and
-                            visualization of cyber physical systems that will bolster Indian manufacturing via
-                            development and commercialization of state-of-the-art products and creation of skilled human
-                            resource (at all levels from researchers and entrepreneurs) and become a key enabler in
-                            catalyzing “Industry 4.0” to realize the vision of “Digital India”. </Typography>
-                    </Box>
-                    <Box display={'flex'} flex={1} justifyContent={'center'} alignItems={'center'}>
-                        <img src={'/assets/drishti_logo.png'} width={250} height={200} alt="drishti_logo"/>
-                    </Box>
-                    <Box display={'flex'} flexDirection={'column'} flex={1} justifyContent={'center'}>
-                        <Typography variant="h3">MISSION</Typography>
-                        <Typography variant="body1">To develop a seamless platform by synchronizing and integrating
-                            various entities, making a fountainhead of knowledge, Skill enhancement, Research,
-                            Technology and Product Development, by innovation and commercialization for effecting
-                            resource optimization and sustainability. </Typography>
-                    </Box>
-                </Box>
-                <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
-                    <Typography variant="h3">MISSION</Typography>
-                    <Typography variant="body1" whiteSpace={'pre-line'} textAlign={'center'}>
-                        {`Modelling, simulation and decision making in cyber physical Industrial systems
-                        Modeling and performance optimization of Energy systems
-                        CPS-based Prognostics and health management (PHM)
-                        Enabling precise and sustainable agriculture using CPS
-                        Modeling and simulation for Biological and healthcare systems
-                        Environmental systems modeling
-                        Dynamical systems modeling and simulation
-                        Modeling and simulation of material behavior
-                        Social behavior modeling and simulation`}
-                    </Typography>
-                </Box>
+            <Box padding={10} display={'flex'} flexWrap={'wrap'} justifyContent={'center'} gap={5}>
+                {buildCard({
+                    title: 'VISION', text: 'To become a pioneering center in simulation, modelling and\n' +
+                        '                        visualization of cyber physical systems that will bolster Indian manufacturing via\n' +
+                        '                        development and commercialization of state-of-the-art products and creation of skilled human\n' +
+                        '                        resource (at all levels from researchers and entrepreneurs) and become a key enabler in\n' +
+                        '                        catalyzing “Industry 4.0” to realize the vision of “Digital India”.'
+                })}
+                {buildCard({
+                    title: 'MISSION', text: 'To develop a seamless platform by synchronizing and integrating\n' +
+                        '                        various entities, making a fountainhead of knowledge, Skill enhancement, Research,\n' +
+                        '                        Technology and Product Development, by innovation and commercialization for effecting\n' +
+                        '                        resource optimization and sustainability.'
+                })}
+                {buildCard({
+                    title: 'THRUST AREAS',
+                    text: 'Modelling, simulation and decision making in cyber physical Industrial systems\n' +
+                        'Modeling and performance optimization of Energy systems\n' +
+                        'CPS-based Prognostics and health management (PHM)\n' +
+                        'Enabling precise and sustainable agriculture using CPS\n' +
+                        'Modeling and simulation for Biological and healthcare systems\n' +
+                        'Environmental systems modeling\n' +
+                        'Dynamical systems modeling and simulation\n' +
+                        'Modeling and simulation of material behavior\n' +
+                        'Social behavior modeling and simulation '
+                })}
             </Box>
 
             {/* 3rd section - carousel */}
-            <Box display={'flex'} alignItems={'center'} flexDirection={'column'}>
-                <Typography variant="h5" style={{textDecoration: 'underline'}}
-                            fontWeight={'bold'}>Announcements</Typography>
-                <Carousel>
-                    <Paper>
-                        <Box display={'flex'} bgcolor={'lightblue'}>
-                            <img src={"/assets/carousel_pic1.jpg"} alt="carousel_pic1" width={100}/>
-                            <Typography variant="body1">Foundation stone being unveiled by Dr B Phatak, Chairman, and
+            <Box paddingX={5} height={'inherit'}>
+                <Typography variant="h3" textAlign={'center'} fontFamily={'Oswald'}
+                            sx={{
+                                textDecoration: 'underline',
+                                marginBottom: 2
+                            }}>
+                    Announcements
+                </Typography>
+                <Carousel autoPlay={false} animation={'slide'}>
+                    <Paper variant={'outlined'}>
+                        <Box display={'flex'} flexDirection={'column'} alignItems={'center'} paddingY={5} gap={5}
+                             height={'inherit'}>
+                            <img src={"/assets/carousel_pic1.jpg"} alt="carousel_pic1" width={500}
+                                 style={{maxWidth: '90vw'}}/>
+                            <Typography variant="h6" textAlign={'center'} fontFamily={'Prompt'}>Foundation stone being
+                                unveiled by Dr B Phatak, Chairman, and
                                 Board of governors.</Typography>
                         </Box>
                     </Paper>
-                    <Paper>
-                        <Box display={'flex'} bgcolor={'lightblue'}>
-                            <img src={"/assets/carousel_pic2.jpg"} alt="carousel_pic2" width={100}/>
-                            <Typography variant="body1">Auspicious Inaugural ribbon being cut by Dr B Phatak and Dr NK
+                    <Paper variant={'outlined'}>
+                        <Box display={'flex'} flexDirection={'column'} alignItems={'center'} paddingY={5} gap={5}
+                             height={'inherit'}>
+                            <img src={"/assets/carousel_pic2.jpg"} alt="carousel_pic1" width={500}
+                                 style={{maxWidth: '90vw'}}/>
+                            <Typography variant="h6" textAlign={'center'} fontFamily={'Prompt'}>Auspicious Inaugural
+                                ribbon being cut by Dr B Phatak and Dr NK
                                 Jain: 12 Aug 21</Typography>
                         </Box>
                     </Paper>
-                    <Paper>
-                        <Box display={'flex'} flexDirection={'column'} bgcolor={'lightblue'}>
-                            <img src={"/assets/drishti_logo.png"} alt="drishti_logo" width={100}/>
-                            <Typography variant="body1">Advertisement for the post of finance manager.</Typography>
-                            <Button variant="contained">Apply online</Button>
-                            <Typography variant="body1" fontStyle={'italic'}>Last Date to apply: 21st September,
+                    <Paper variant={'outlined'}>
+                        <Box display={'flex'} flexDirection={'column'} alignItems={'center'} paddingY={5} gap={5}
+                             height={'inherit'}>
+                            <img src={"/assets/drishti_logo.png"} alt="carousel_pic1" width={400}
+                                 style={{maxWidth: '90vw'}}/>
+                            <Typography variant="h6" textAlign={'center'} fontFamily={'Prompt'}>Advertisement for the
+                                post of finance manager.</Typography>
+                            <Typography variant="h6" textAlign={'center'} fontFamily={'Prompt'} fontStyle={'italic'}
+                                        fontWeight={'bold'}>Last Date to apply: 21st September,
                                 2021</Typography>
                         </Box>
                     </Paper>
-                    <Paper>
-                        <Box display={'flex'} flexDirection={'column'} bgcolor={'lightblue'} alignItems={'center'}
-                             minWidth={500}>
-                            <img src={"/assets/drishti_logo.png"} alt="drishti_logo" width={100}/>
-                            <Typography variant="body1">Newsletter</Typography>
-                            <Button variant="contained">View</Button>
+                    <Paper variant={'outlined'}>
+                        <Box display={'flex'} flexDirection={'column'} alignItems={'center'} paddingY={5} gap={5}
+                             height={'inherit'}>
+                            <img src={"/assets/drishti_logo.png"} alt="carousel_pic1" width={400}
+                                 style={{maxWidth: '90vw'}}/>
+                            <Typography variant="h6" textAlign={'center'} fontFamily={'Prompt'}>Newsletter</Typography>
                         </Box>
                     </Paper>
                 </Carousel>
             </Box>
 
             {/* 4th section */}
-            <Box borderBottom={2} textAlign={'center'}>
-                <Typography variant="h5">ACTIVITIES</Typography>
-                <Typography variant='body1'>The TIH will work with the intent to nurture a culture of entrepreneurship
-                    not just within the institute but across Central India. There would be a thrust towards skill
-                    development, incubating start-ups, R&D activities, industry engagement, and serving the rural and
-                    underprivileged populace. While engaged in such activity, the TIH would work towards the important
-                    goal of self-sustainability.</Typography>
+            <Box padding={10} marginX={'auto'} width={'100%'} maxWidth={1200}>
+                <Paper elevation={5}>
+                    <Box padding={10}>
+                        <Typography variant="h2" textAlign={'center'} fontFamily={'Oswald'}
+                                    marginBottom={5}
+                                    sx={{textDecoration: 'underline'}}>ACTIVITIES</Typography>
+                        <Typography variant="h6" textAlign={'center'} fontFamily={'Prompt'}>The TIH will work with the
+                            intent to nurture a culture of entrepreneurship
+                            not just within the institute but across Central India. There would be a thrust towards
+                            skill
+                            development, incubating start-ups, R&D activities, industry engagement, and serving the
+                            rural and
+                            underprivileged populace. While engaged in such activity, the TIH would work towards the
+                            important
+                            goal of self-sustainability.</Typography>
+                    </Box>
+                </Paper>
             </Box>
+
+            {/*5th section*/}
+            <Box padding={10} display={'flex'} flexWrap={'wrap'} justifyContent={'center'} gap={5}>
+                {buildCard({
+                    title: 'TECHNOLOGY DEVELOPMENT',
+                    text: 'One of the core hub activities is aimed towards technology development through various researches. The budget for technology development includes support for R&D projects, prototype development, patenting, and commercialization. It is considered that the budget will comprise of both recurring expenses and non-recurring expenses; however, the actual break-up can vary, based on the sanctioned amount. '
+                })}
+                {buildCard({
+                    title: 'ENTREPRENEURS',
+                    text: 'The hub activity, Innovation, Entrepreneurship & Start-ups Ecosystem, will cover EIR, start-up incubation, pre-incubation and other entrepreneurship related activities like investors summit, incubation facilities. Budget for the hub activity accounts for the expenses required in the promotion, incubation, operation and development of start-ups and other entrepreneurial ventures in the domain of the CPS. '
+                })}
+                {buildCard({
+                    title: 'HRD AND SKILL DEVELOPMENT',
+                    text: 'Hub activity, HRD & Skill Development, is aimed towards training and development of skilled professionals through fellowships and skill development workshops. Budget for HRD & Skill Development includes fellowship for UG, PG, Doctoral, Faculties and Chair professors, apart from development funds to support UG and PG internships and professional skill development workshops. '
+                })}
+                {buildCard({
+                    title: 'CENTRE OF EXCELLENCE',
+                    text: 'A Centre of Excellence (CoE) for System Simulation, Modelling and Visualization will be developed as a part of TIH. The primary focus of the CoE will be translational research, i.e., converting the academic research into industry-oriented technology. The CoE will serve as a common unit for different activities and will facilitate interdisciplinary researches in the field of CPS. '
+                })}
+                {buildCard({
+                    title: 'INTERNATIONAL COLLABORATIONS',
+                    text: 'International collaboration serves as a two-way bridge for exchange of information at international platform. Collaborations will introduce state of the art international practices in the field of CPS in technology development in India and provide a platform for show casing the developed technology. In this activity bilateral technology development will be encouraged.  '
+                })}
+            </Box>
+
         </Box>
     )
 }
