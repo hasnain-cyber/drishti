@@ -1,0 +1,7 @@
+{
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "cSpell.words": ["Drishti"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
