@@ -1,4 +1,4 @@
-import {Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, ListSubheader} from '@mui/material';
+import {Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListSubheader} from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -6,15 +6,17 @@ import Typography from '@mui/material/Typography';
 import {useState} from 'react';
 import MenuIcon from '@mui/icons-material/Menu'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import '../index.scss'
 
-const generateNavbarLinksList = (linksObject: {
+const NavbarLinksList = (linksObject: {
     subheaderTitle: String; subLinks: {
         linkPath: String,
         linkText: String
     }[]
 }) => {
+    const history = useHistory()
+
     return (
         <List>
             <ListSubheader sx={{fontFamily: 'Oswald', fontSize: 20, textDecoration: 'underline', textAlign: 'center'}}
@@ -23,10 +25,10 @@ const generateNavbarLinksList = (linksObject: {
             </ListSubheader>
             {linksObject.subLinks.map(element =>
                 <ListItem>
-                    <ListItemButton>
-                        <Link to={'/' + element.linkPath} style={{textDecoration: 'none', color: 'black'}}>
-                            <ListItemText primary={element.linkText} sx={{textAlign: 'center'}}/>
-                        </Link>
+                    <ListItemButton onClick={() => {
+                        history.push('/' + element.linkPath)
+                    }} sx={{fontFamily: 'Prompt'}}>
+                        {element.linkText}
                     </ListItemButton>
                 </ListItem>
             )}
@@ -40,7 +42,7 @@ const Navbar = () => {
     return (
         <Box>
             {/* main appbar */}
-            <AppBar position="static">
+            <AppBar position="static" sx={{backgroundColor: 'primary.dark'}}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -79,7 +81,7 @@ const Navbar = () => {
                 <Divider/>
 
                 {/* organisation list */}
-                {generateNavbarLinksList({
+                {NavbarLinksList({
                     subheaderTitle: 'Organization',
                     subLinks: [{linkPath: 'gov_body', linkText: 'Hub Governing Body'}, {
                         linkPath: 'bod',
@@ -89,7 +91,7 @@ const Navbar = () => {
                         linkText: 'Implementation Committees'
                     }]
                 })}
-                {generateNavbarLinksList({
+                {NavbarLinksList({
                     subheaderTitle: 'Partners',
                     subLinks: [{linkPath: '', linkText: 'Industries'}, {
                         linkPath: '',
@@ -99,7 +101,7 @@ const Navbar = () => {
                         linkText: 'Startups'
                     }, {linkPath: '', linkText: 'Defence/Paramilitary Forces/Govt Departments'}]
                 })}
-                {generateNavbarLinksList({
+                {NavbarLinksList({
                     subheaderTitle: 'Facilities',
                     subLinks: [{linkPath: '', linkText: 'Spoke LOC with expertise'}, {
                         linkPath: '',
@@ -109,7 +111,7 @@ const Navbar = () => {
                         linkText: 'Labs'
                     }, {linkPath: '', linkText: 'CPS Resource Center'}]
                 })}
-                {generateNavbarLinksList({
+                {NavbarLinksList({
                     subheaderTitle: 'Gallery',
                     subLinks: [{linkPath: '', linkText: 'Course'}, {
                         linkPath: '',
