@@ -329,8 +329,8 @@ const LandingPage = () => {
                 marginY={5}
                 sx={{
                     backgroundImage: "linear-gradient(\n" +
-                        "                rgba(0, 0, 0, 0.3),\n" +
-                        "                rgba(0, 0, 0, 0.3)\n" +
+                        "                rgba(0, 0, 0, 0.533),\n" +
+                        "                rgba(0, 0, 0, 0.533)\n" +
                         "            ),url(/assets/technology.jpg)",
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
