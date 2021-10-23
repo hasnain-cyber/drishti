@@ -1,6 +1,7 @@
 import { Box, Paper, Tab, Tabs, Typography } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 import { useState } from "react";
 import "./LandingPage.scss";
 
@@ -411,103 +412,7 @@ const LandingPage = () => {
       </Box>
 
       {/*6th section - Footer*/}
-      <Box
-        display={"flex"}
-        flexWrap={"wrap"}
-        justifyContent={"center"}
-        gap={5}
-        bgcolor={"secondary.light"}
-        padding={"2%"}
-      >
-        <Box maxWidth={500}>
-          <Typography
-            variant="h4"
-            textAlign={"center"}
-            fontFamily={"Oswald"}
-            marginBottom={2}
-            color={"secondary.dark"}
-          >
-            CONTACT US
-          </Typography>
-          <Typography
-            variant="body1"
-            textAlign={"center"}
-            fontFamily={"Prompt"}
-            marginBottom={0}
-          >
-            IITI Drishti CPS Foundation IIT Indore Campus, Khandwa Road, Simrol,
-            Indore 453552, INDIA
-          </Typography>
-          <Typography
-            variant="body1"
-            textAlign={"center"}
-            fontFamily={"Prompt"}
-            marginBottom={0}
-          >
-            Email : officedrishti [at] iiti.ac.in
-          </Typography>
-          <Typography
-            variant="body1"
-            textAlign={"center"}
-            fontFamily={"Prompt"}
-            marginBottom={0}
-          >
-            Phone : +91-731-660 3372(Extn- 3372)
-          </Typography>
-          <Typography
-            variant="body1"
-            textAlign={"center"}
-            fontFamily={"Prompt"}
-            marginBottom={0}
-          >
-            Website : drishticps.iiti.ac.in
-          </Typography>
-        </Box>
-        <Box maxWidth={500}>
-          <Typography
-            variant="h4"
-            textAlign={"center"}
-            fontFamily={"Oswald"}
-            marginBottom={2}
-            color={"secondary.dark"}
-          >
-            CONTACT US
-          </Typography>
-          <Typography
-            variant="body1"
-            textAlign={"center"}
-            fontFamily={"Prompt"}
-            marginBottom={0}
-          >
-            IITI Drishti CPS Foundation IIT Indore Campus, Khandwa Road, Simrol,
-            Indore 453552, INDIA
-          </Typography>
-          <Typography
-            variant="body1"
-            textAlign={"center"}
-            fontFamily={"Prompt"}
-            marginBottom={0}
-          >
-            Email : officedrishti [at] iiti.ac.in
-          </Typography>
-          <Typography
-            variant="body1"
-            textAlign={"center"}
-            fontFamily={"Prompt"}
-            marginBottom={0}
-          >
-            Phone : +91-731-660 3372(Extn- 3372)
-          </Typography>
-          <Typography
-            variant="body1"
-            textAlign={"center"}
-            fontFamily={"Prompt"}
-            marginBottom={0}
-          >
-            Website : drishticps.iiti.ac.in
-          </Typography>
-        </Box>
-      </Box>
+      <Footer />
     </Box>
   );
 };
