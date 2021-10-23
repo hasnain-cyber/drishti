@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import {Link} from "react-router-dom";
 import "../index.scss";
 
 const Footer = () => {
@@ -72,7 +73,7 @@ const Footer = () => {
                         fontSize={"1rem"}
                         marginBottom={0}
                     >
-                        <a href="https://iiti.ac.in/">IIT Indore</a>
+                        <Link to="https://iiti.ac.in/">IIT Indore</Link>
                     </Typography>
                     <Typography
                         variant="body1"
@@ -80,7 +81,7 @@ const Footer = () => {
                         fontSize={"1rem"}
                         marginBottom={0}
                     >
-                        <a href="https://nmicps.gov.in/">NM-ICPS</a>
+                        <Link to="https://nmicps.gov.in/">NM-ICPS</Link>
                     </Typography>
                     <Typography
                         variant="body1"
@@ -88,7 +89,7 @@ const Footer = () => {
                         fontSize={"1rem"}
                         marginBottom={0}
                     >
-                        <a href="http://ciieir.iiti.ac.in/">CIIEIR</a>
+                        <Link to="http://ciieir.iiti.ac.in/">CIIEIR</Link>
                     </Typography>
                     <Typography
                         variant="body1"
@@ -96,7 +97,7 @@ const Footer = () => {
                         fontSize={"1rem"}
                         marginBottom={0}
                     >
-                        <a href="#">Tenders</a>
+                        <Link to="/">Tenders</Link>
                     </Typography>
                 </Box>
                 <Box>
