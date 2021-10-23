@@ -182,7 +182,7 @@ const LandingPage = () => {
                 >
                     ANNOUNCEMENTS
                 </Typography>
-                <Carousel autoPlay={false} animation={"fade"}>
+                <Carousel autoPlay={false} animation={'slide'}>
                     <Paper
                         variant={"outlined"}
                         sx={{
