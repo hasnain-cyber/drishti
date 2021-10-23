@@ -80,14 +80,17 @@ const LandingPage = () => {
     <Box bgcolor={"primary.light"}>
       <Navbar />
       {/* 1st section */}
-
       <Box
         className="bg_img"
         display={"flex"}
         justifyContent={"center"}
         alignItems={"center"}
         sx={{
-          backgroundImage: "url(/assets/campus_bg.jpg)",
+          backgroundImage:
+            "linear-gradient(\n" +
+            "                rgba(0, 0, 0, 0.533),\n" +
+            "                rgba(0, 0, 0, 0.533)\n" +
+            "            ),url(/assets/campus_bg.jpg)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",
@@ -101,7 +104,7 @@ const LandingPage = () => {
             fontFamily={"Oswald"}
             marginBottom={5}
             sx={{ textDecoration: "underline" }}
-            color={"primary.dark"}
+            color={"white"}
           >
             WELCOME TO DRISHTI
           </Typography>
@@ -114,11 +117,11 @@ const LandingPage = () => {
           >
             The Technology Innovation Hub (TIH) falls under the aegis of the
             national mission on interdisciplinary
-            <br></br> cyber physical systems and is named IITI DRISHTI CPS
-            Foundation: <br></br> Driving Innovation through Simulation Hub for
-            Technologies in Interdisciplinary Cyber Physical Systems. <br></br>
+            <br /> cyber physical systems and is named IITI DRISHTI CPS
+            Foundation: <br /> Driving Innovation through Simulation Hub for
+            Technologies in Interdisciplinary Cyber Physical Systems. <br />
             The overarching goal of DRISHTI-CPS is to develop an eco-system that
-            will enable knowledge generation <br></br> through basic and applied
+            will enable knowledge generation <br /> through basic and applied
             research and foster an interactive environment where innovative
             products can be developed through joint efforts of industry and
             academia.
@@ -217,7 +220,6 @@ const LandingPage = () => {
               alignItems: "center",
               justifyContent: "center",
               gap: 5,
-              //   backgroundColor: "white",
               backgroundColor: "primary.dark",
               height: 500,
               padding: "5%",
@@ -286,7 +288,6 @@ const LandingPage = () => {
               alignItems: "center",
               justifyContent: "center",
               gap: 5,
-              //   backgroundColor: "white",
               backgroundColor: "primary.dark",
               height: 500,
               padding: "5%",
@@ -321,47 +322,6 @@ const LandingPage = () => {
       </Box>
 
       {/*4th section*/}
-      {/* <Box
-        display={"flex"}
-        flexDirection={"column"}
-        justifyContent={"center"}
-        alignItems={"end"}
-        marginY={5}
-        padding={"5%"}
-        sx={{
-          backgroundImage: "url(/assets/technology.jpg)",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed",
-          backgroundPosition: "center",
-        }}
-        minHeight={500}
-      >
-        <Typography
-          variant="h3"
-          textAlign={"right"}
-          fontFamily={"Oswald"}
-          marginBottom={5}
-          sx={{ textDecoration: "underline" }}
-          color={"white"}
-        >
-          TECHNOLOGY DEVELOPMENT
-        </Typography>
-        <Typography
-          variant={"h6"}
-          textAlign={"right"}
-          fontFamily={"Prompt"}
-          color={"white"}
-          maxWidth={800}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
-          consequatur dolorum earum eligendi error, esse, facere iste minima
-          modi molestiae nam nihil odit, quam qui quibusdam repellat sed sequi
-          temporibus?
-        </Typography>
-      </Box> */}
-
-      {/*5th section*/}
       <Box
         padding={"2%"}
         display={"flex"}
@@ -369,7 +329,11 @@ const LandingPage = () => {
         justifyContent={"center"}
         marginY={5}
         sx={{
-          backgroundImage: "url(/assets/technology.jpg)",
+          backgroundImage:
+            "linear-gradient(\n" +
+            "                rgba(0, 0, 0, 0.533),\n" +
+            "                rgba(0, 0, 0, 0.533)\n" +
+            "            ),url(/assets/technology.jpg)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",
@@ -411,7 +375,105 @@ const LandingPage = () => {
         </Box>
       </Box>
 
-      {/*6th section - Footer*/}
+      {/*5th section - Footer*/}
+      {/* <Box
+                display={"flex"}
+                flexWrap={"wrap"}
+                justifyContent={"center"}
+                gap={5}
+                bgcolor={"secondary.light"}
+                padding={"2%"}
+            >
+                <Box maxWidth={500}>
+                    <Typography
+                        variant="h4"
+                        textAlign={"center"}
+                        fontFamily={"Oswald"}
+                        marginBottom={2}
+                        color={"secondary.dark"}
+                    >
+                        CONTACT US
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        textAlign={"center"}
+                        fontFamily={"Prompt"}
+                        marginBottom={0}
+                    >
+                        IITI Drishti CPS Foundation IIT Indore Campus, Khandwa Road, Simrol,
+                        Indore 453552, INDIA
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        textAlign={"center"}
+                        fontFamily={"Prompt"}
+                        marginBottom={0}
+                    >
+                        Email : officedrishti [at] iiti.ac.in
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        textAlign={"center"}
+                        fontFamily={"Prompt"}
+                        marginBottom={0}
+                    >
+                        Phone : +91-731-660 3372(Extn- 3372)
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        textAlign={"center"}
+                        fontFamily={"Prompt"}
+                        marginBottom={0}
+                    >
+                        Website : drishticps.iiti.ac.in
+                    </Typography>
+                </Box>
+                <Box maxWidth={500}>
+                    <Typography
+                        variant="h4"
+                        textAlign={"center"}
+                        fontFamily={"Oswald"}
+                        marginBottom={2}
+                        color={"secondary.dark"}
+                    >
+                        CONTACT US
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        textAlign={"center"}
+                        fontFamily={"Prompt"}
+                        marginBottom={0}
+                    >
+                        IITI Drishti CPS Foundation IIT Indore Campus, Khandwa Road, Simrol,
+                        Indore 453552, INDIA
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        textAlign={"center"}
+                        fontFamily={"Prompt"}
+                        marginBottom={0}
+                    >
+                        Email : officedrishti [at] iiti.ac.in
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        textAlign={"center"}
+                        fontFamily={"Prompt"}
+                        marginBottom={0}
+                    >
+                        Phone : +91-731-660 3372(Extn- 3372)
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        textAlign={"center"}
+                        fontFamily={"Prompt"}
+                        marginBottom={0}
+                    >
+                        Website : drishticps.iiti.ac.in
+                    </Typography>
+                </Box>
+            </Box>
+        </Box> */}
       <Footer />
     </Box>
   );
