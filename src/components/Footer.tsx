@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import "../index.scss";
-import Location from "../components/location";
 
 const Footer = () => {
     return (
@@ -101,7 +100,9 @@ const Footer = () => {
                     </Typography>
                 </Box>
                 <Box>
-                    <Location/>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7370.913000013107!2d75.91764557409962!3d22.5245661012452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962efcccbce7145%3A0x784e8cb69818596b!2sIIT%20Indore!5e0!3m2!1sen!2sin!4v1635010938792!5m2!1sen!2sin"
+                        width="600" height="450" loading="lazy"/>
                 </Box>
             </Box>
             <Box display={"flex"} flexWrap={"wrap"}>

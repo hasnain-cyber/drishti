@@ -1,9 +1,9 @@
 import {Box, Paper, Tab, Tabs, Typography} from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import {useState} from "react";
 import "./LandingPage.scss";
+import Footer from "../../components/Footer";
 
 const tabsDataList = [
     {
