@@ -10,10 +10,10 @@ import {Link, useHistory} from "react-router-dom";
 import "../index.scss";
 
 const NavbarLinksList = (linksObject: {
-    subheaderTitle: String;
+    subheaderTitle: string;
     subLinks: {
-        linkPath: String;
-        linkText: String;
+        linkPath: string;
+        linkText: string;
     }[];
 }) => {
     const history = useHistory();
@@ -32,7 +32,7 @@ const NavbarLinksList = (linksObject: {
                 {linksObject.subheaderTitle}
             </ListSubheader>
             {linksObject.subLinks.map((element) => (
-                <ListItem>
+                <ListItem key={element.linkPath}>
                     <ListItemButton
                         onClick={() => {
                             history.push("/" + element.linkPath);
