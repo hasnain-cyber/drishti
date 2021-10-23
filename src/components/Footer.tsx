@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import "../index.scss";
-
+import Location from "../components/location";
 const Footer = () => {
   return (
     <Box>
@@ -99,7 +99,9 @@ const Footer = () => {
             <a href="#">Tenders</a>
           </Typography>
         </Box>
-        <Box maxWidth={300}></Box>
+        <Box>
+          <Location />
+        </Box>
       </Box>
       <Box display={"flex"} flexWrap={"wrap"}>
         <Box minWidth={"50%"}>
