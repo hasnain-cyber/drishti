@@ -1,6 +1,5 @@
 import {Box, Paper, Tab, Tabs, Typography} from "@mui/material";
 import Carousel from "react-material-ui-carousel";
-import Navbar from "../../components/Navbar";
 import {useState} from "react";
 import "./LandingPage.scss";
 import MainFooter from "../../components/MainFooter/MainFooter";
@@ -78,7 +77,6 @@ const LandingPage = () => {
 
     return (
         <Box bgcolor={"primary.light"}>
-            <Navbar/>
             {/* 1st section */}
             <Box
                 display={"flex"}

@@ -1,6 +1,7 @@
 import {Route, Switch} from "react-router-dom";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
+import Navbar from "./components/Navbar";
 
 let theme = createTheme({
     palette: {
@@ -23,8 +24,8 @@ let theme = createTheme({
 function App() {
     return (
         <ThemeProvider theme={theme}>
+            <Navbar/>
             <Switch>
-
                 <Route exact path="/" component={LandingPage}/>
             </Switch>
         </ThemeProvider>
