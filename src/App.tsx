@@ -1,6 +1,7 @@
 import {Route, Switch} from "react-router-dom";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
+import Gov_Body from "./pages/Organisation/Gov_Body";
 
 let theme = createTheme({
     palette: {
@@ -26,6 +27,7 @@ function App() {
             <Switch>
 
                 <Route exact path="/" component={LandingPage}/>
+                <Route exact path="/gov_body" component={Gov_Body}/>
             </Switch>
         </ThemeProvider>
     );
