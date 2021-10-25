@@ -1,0 +1,28 @@
+@import '../../index';
+
+.desktop-view-navbar-links {
+  display: flex;
+}
+
+.mobile-view-drawer-button {
+  display: none;
+}
+
+.navbar-subLink {
+  font-family: 'Prompt', cursive;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+
+  padding: 10px;
+}
+
+@media (max-width: 850px) {
+  .mobile-view-drawer-button {
+    display: inline-block;
+  }
+
+  .desktop-view-navbar-links {
+    display: none;
+  }
+}

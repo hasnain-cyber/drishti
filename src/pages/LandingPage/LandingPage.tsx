@@ -320,7 +320,7 @@ const LandingPage = () => {
                 display={"flex"}
                 flexDirection={"column"}
                 justifyContent={"center"}
-                marginY={5}
+                marginTop={5}
                 sx={{
                     backgroundImage:
                         "linear-gradient(\n" +

@@ -4,7 +4,8 @@ import './MainFooter.scss'
 
 const LinkText = (props: { linkPath: string, linkText: string }) => {
     return (
-        <a href={props.linkPath} style={{color: 'black', textDecoration: 'none'}} rel="noreferrer" target={'_blank'}>{props.linkText}</a>
+        <a className={'main-footer-quick-links'} href={props.linkPath} rel="noreferrer"
+           target={'_blank'}>{props.linkText}</a>
     )
 }
 
