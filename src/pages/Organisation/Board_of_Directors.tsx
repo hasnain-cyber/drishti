@@ -18,7 +18,7 @@ export default function Board_of_Directors() {
             <div className="container mt-4">
                 <div className="row gap-5">
                     <div className="col-md-5 col-sm-12 col-xs-12 d-flex gap-3">
-                        <img style={{
+                        <img alt='' style={{
                             width: "160px",
                             height: "180px"
                         }} src="http://drishticps.iiti.ac.in/files_upload/faculty_images/409f6ea2337a78584191c9b5a6c11693.jpg" className="img-thumbnail img-people" />
@@ -28,7 +28,7 @@ export default function Board_of_Directors() {
                             Director (Officiating), Indian Institute of Technology Indore.</span>
                     </div>
                     <div className="col-md-5 col-sm-12 col-xs-12 d-flex gap-3">
-                        <img style={{
+                        <img alt='' style={{
                             width: "160px",
                             height: "180px"
                         }} src="http://drishticps.iiti.ac.in/files_upload/faculty_images/4e05e5a1f2122aca428a6da933b29492.jpg" className="img-thumbnail img-people" />
