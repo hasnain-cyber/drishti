@@ -18,10 +18,10 @@ export default function Exec_Body() {
             <div className="container mt-4">
                 <div className="row gap-3">
                     <div className="col-md-5 col-sm-12 col-xs-12 d-flex gap-3">
-                        <img style={{
+                        <img alt='' style={{
                             width: "160px",
                             height: "180px"
-                        }} src="http://drishticps.iiti.ac.in/files_upload/faculty_images/d1c30d3c1d3aac29023f49effd7dc71c.jpg" className="img-thumbnail img-people" />
+                        }} src="/assets/img/sunil.jpg" className="img-thumbnail img-people" />
 
                         <span>
                             <strong>Dr. Sunil Dutta</strong><br />
