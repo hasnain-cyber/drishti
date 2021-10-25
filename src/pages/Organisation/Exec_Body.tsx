@@ -21,7 +21,7 @@ export default function Exec_Body() {
                         <img alt='' style={{
                             width: "160px",
                             height: "180px"
-                        }} src="http://drishticps.iiti.ac.in/files_upload/faculty_images/d1c30d3c1d3aac29023f49effd7dc71c.jpg" className="img-thumbnail img-people" />
+                        }} src="/assets/img/sunil.jpg" className="img-thumbnail img-people" />
 
                         <span>
                             <strong>Dr. Sunil Dutta</strong><br />
