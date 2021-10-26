@@ -2,7 +2,6 @@ import {Box, Paper, Tab, Tabs, Typography} from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import {useState} from "react";
 import "./LandingPage.scss";
-import MainFooter from "../../components/MainFooter/MainFooter";
 
 const tabsDataList = [
     {
@@ -141,11 +140,29 @@ const LandingPage = () => {
                 >
                     {Card({
                         title: "VISION",
-                        text: "To become a pioneering center in simulation, modelling and visualization of cyber physical systems that will bolster Indian manufacturing via development and commercialization of state-of-the-art products and creation of skilled human resource (at all levels from researchers and entrepreneurs) and become a key enabler in catalyzing “Industry 4.0” to realize the vision of “Digital India”.",
+                        text:
+                            "Modelling, simulation and decision making in cyber physical Industrial systems" +
+                            "Modeling and performance optimization of Energy systems" +
+                            "CPS-based Prognostics and health management (PHM)" +
+                            "Enabling precise and sustainable agriculture using CPS" +
+                            "Modeling and simulation for Biological and healthcare systems" +
+                            "Environmental systems modeling" +
+                            "Dynamical systems modeling and simulation" +
+                            "Modeling and simulation of material behavior" +
+                            "Social behavior modeling and simulation",
                     })}
                     {Card({
                         title: "MISSION",
-                        text: "To develop a seamless platform by synchronizing and integrating various entities, making a fountainhead of knowledge, Skill enhancement, Research, Technology and Product Development, by innovation and commercialization for effecting resource optimization and sustainability.",
+                        text:
+                            "Modelling, simulation and decision making in cyber physical Industrial systems" +
+                            "Modeling and performance optimization of Energy systems" +
+                            "CPS-based Prognostics and health management (PHM)" +
+                            "Enabling precise and sustainable agriculture using CPS" +
+                            "Modeling and simulation for Biological and healthcare systems" +
+                            "Environmental systems modeling" +
+                            "Dynamical systems modeling and simulation" +
+                            "Modeling and simulation of material behavior" +
+                            "Social behavior modeling and simulation",
                     })}
                     {Card({
                         title: "THRUST AREAS",
@@ -190,7 +207,7 @@ const LandingPage = () => {
                         }}
                     >
                         <img
-                            src={"/assets/carousel_pic1.jpg"}
+                            src={"/assets/landingPageCarousel/carousel_pic1.jpg"}
                             alt="carousel_pic1"
                             width={400}
                             style={{maxWidth: "95%", border: "2px solid black"}}
@@ -219,7 +236,7 @@ const LandingPage = () => {
                         }}
                     >
                         <img
-                            src={"/assets/carousel_pic2.jpg"}
+                            src={"/assets/landingPageCarousel/carousel_pic2.jpg"}
                             alt="carousel_pic2"
                             width={400}
                             style={{maxWidth: "95%", border: "2px solid black"}}
@@ -242,7 +259,6 @@ const LandingPage = () => {
                             alignItems: "center",
                             justifyContent: "center",
                             gap: 5,
-                            //   backgroundColor: "white",
                             backgroundColor: "primary.dark",
                             height: 500,
                             padding: "5%",
@@ -367,9 +383,6 @@ const LandingPage = () => {
                     <TabPanel value={tabsValue}/>
                 </Box>
             </Box>
-
-            {/*footer*/}
-            <MainFooter/>
         </Box>
     );
 };

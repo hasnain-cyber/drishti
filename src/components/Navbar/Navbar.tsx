@@ -236,7 +236,7 @@ const Navbar = () => {
                 </Box>
                 <Divider/>
 
-                {/* organisation list */}
+                {/* organization list */}
                 {MobileNavbarLinksList(navbarLinksList[0])}
                 {MobileNavbarLinksList(navbarLinksList[1])}
                 {MobileNavbarLinksList(navbarLinksList[2])}
