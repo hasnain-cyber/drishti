@@ -12,7 +12,7 @@ import React from "react";
 let theme = createTheme({
     palette: {
         primary: {
-            main: "#c74c4b",
+            main: "#B2040F",
             dark: "#772120",
             light: "#ffffff",
         },

@@ -144,7 +144,7 @@ const DesktopNavbarLinks = (linksObject: {
 
     return (
         <Box marginX={1} ref={ref} sx={{position: 'relative'}}>
-            <Typography fontFamily={'Prompt'}>{linksObject.subheaderTitle}</Typography>
+            <span className={'navbar-desktop-subheader'}>{linksObject.subheaderTitle}</span>
             <Box display={'flex'} flexDirection={'column'} bgcolor={'white'} width={200}
                  sx={{
                      position: 'absolute',
@@ -165,28 +165,40 @@ const Navbar = () => {
     const [openDrawer, setOpenDrawer] = useState(false)
     const [navbarColor, setNavbarColor] = useState('transparent')
 
+    const history = useHistory()
+    const [isLandingPage, setIsLandingPage] = useState(true)
+
     useEffect(() => {
+        // assume that the first page is landing page
         window.addEventListener('scroll', handleScrollEvent)
-        return () => {
-            window.removeEventListener('scroll', handleScrollEvent)
-        }
+
+        // if this is the landing page
+        history.listen((location => {
+            if (location.pathname === '/') {
+                setIsLandingPage(true)
+                window.addEventListener('scroll', handleScrollEvent)
+            } else {
+                setIsLandingPage(false)
+                window.removeEventListener('scroll', handleScrollEvent)
+            }
+        }))
     }, []);
 
     const handleScrollEvent = () => {
         if (window.scrollY > window.innerHeight * 0.9) {
-            setNavbarColor('primary.dark')
+            setNavbarColor('#B2040F')
         } else {
             setNavbarColor('transparent')
         }
     }
 
     return (
-        <Box>
+        <>
             {/* main appbar */}
             <AppBar
-                position="fixed"
+                position={isLandingPage ? 'fixed' : 'sticky'}
                 elevation={0}
-                sx={{background: navbarColor, transition: '.2s'}}
+                sx={{background: isLandingPage ? navbarColor : 'primary.main', transition: '.2s'}}
             >
                 <Toolbar>
                     <Box className={'mobile-view-drawer-button'}>
@@ -211,8 +223,8 @@ const Navbar = () => {
                             height="55"
                             style={{margin: 10, backgroundColor: 'white', padding: 5, borderRadius: 5}}
                             alt={'drishti_logo'}/>
-                        <Typography variant="h6" fontFamily={"Ubuntu"} fontSize={25}>
-                            DRISHTI CPS FOUNDATION
+                        <Typography variant="h6" fontFamily={"Ubuntu"} textAlign={'center'} fontSize={25}>
+                            IITI DRISHTI CPS FOUNDATION
                         </Typography>
                     </Link>
 
@@ -254,7 +266,7 @@ const Navbar = () => {
                 {MobileNavbarLinksList(navbarLinksList[2])}
                 {MobileNavbarLinksList(navbarLinksList[3])}
             </Drawer>
-        </Box>
+        </>
     );
 };
 

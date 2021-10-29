@@ -3,11 +3,11 @@ import React from 'react'
 
 const cardDetailsList = [
     {
-        imageUrl: 'http://drishticps.iiti.ac.in/files_upload/faculty_images/409f6ea2337a78584191c9b5a6c11693.jpg',
+        imageUrl: 'assets/organization/neelesh.jpg',
         imageTitle: 'Prof.Neelesh Kumar Jain',
         imageText: 'Director (Officiating), Indian Institute of Technology Indore.'
     }, {
-        imageUrl: 'http://drishticps.iiti.ac.in/files_upload/faculty_images/4e05e5a1f2122aca428a6da933b29492.jpg',
+        imageUrl: 'assets/organization/anand.jpg',
         imageTitle: 'Dr.Anand Iyamperumal Palani',
         imageText: 'Dean R&amp; D, Indian Institute of Technology Indore.'
     },
