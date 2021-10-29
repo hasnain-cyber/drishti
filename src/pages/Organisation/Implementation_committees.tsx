@@ -1,9 +1,9 @@
-import { Typography } from '@mui/material'
+import {Box, Typography} from '@mui/material'
 import React from 'react'
 
 export default function Implementation_committees() {
     return (
-        <div>
+        <Box paddingY={5}>
             <Typography
                 variant="h6"
                 textAlign={"center"}
@@ -138,6 +138,6 @@ export default function Implementation_committees() {
 
                         </div>
                     </div></div></div>
-        </div>
+        </Box>
     )
 }

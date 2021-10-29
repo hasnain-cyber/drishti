@@ -1,13 +1,35 @@
+@import "../../index";
+
 .main-footer-quick-links {
+  width: fit-content; // to prevent stretching in horizontal direction
+
   color: black;
   text-decoration: none;
-
-  width: fit-content; // to prevent stretching in horizontal direction
 
   &:hover {
     color: blue;
     text-decoration: underline;
   }
+}
+
+.footer-facebook-icon, .footer-twitter-icon, .footer-instagram-icon, .footer-linkedIn-icon {
+  color: black;
+}
+
+.footer-facebook-icon:hover {
+  color: #4267B2;
+}
+
+.footer-twitter-icon:hover {
+  color: #1DA1F2;
+}
+
+.footer-instagram-icon:hover {
+  color: #8a3ab9;
+}
+
+.footer-linkedIn-icon:hover {
+  color: #0077b5;
 }
 
 @media (max-width: 1000px) {

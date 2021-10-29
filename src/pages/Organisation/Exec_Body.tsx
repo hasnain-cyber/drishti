@@ -1,9 +1,9 @@
-import {Typography} from '@mui/material'
+import {Box, Typography} from '@mui/material'
 import React from 'react'
 
 export default function Exec_Body() {
     return (
-        <div>
+        <Box paddingBottom={5}>
             <Typography
                 variant="h6"
                 textAlign={"center"}
@@ -36,6 +36,6 @@ export default function Exec_Body() {
                         Maharaj Gold Medal. </i>
                 </div>
             </div>
-        </div>
+        </Box>
     )
 }

@@ -162,19 +162,31 @@ const DesktopNavbarLinks = (linksObject: {
 }
 
 const Navbar = () => {
-    const [openDrawer, setOpenDrawer] = useState(false);
+    const [openDrawer, setOpenDrawer] = useState(false)
+    const [navbarColor, setNavbarColor] = useState('transparent')
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScrollEvent)
+        return () => {
+            window.removeEventListener('scroll', handleScrollEvent)
+        }
+    }, []);
+
+    const handleScrollEvent = () => {
+        if (window.scrollY > window.innerHeight * 0.9) {
+            setNavbarColor('primary.dark')
+        } else {
+            setNavbarColor('transparent')
+        }
+    }
 
     return (
-        <Box
-            sx={{
-                position: "sticky",
-                top: 0,
-                zIndex: 5,
-            }}>
+        <Box>
             {/* main appbar */}
             <AppBar
-                position="sticky"
-                sx={{backgroundColor: "primary.dark"}}
+                position="fixed"
+                elevation={0}
+                sx={{background: navbarColor, transition: '.2s'}}
             >
                 <Toolbar>
                     <Box className={'mobile-view-drawer-button'}>

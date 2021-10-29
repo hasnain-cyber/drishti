@@ -8,7 +8,6 @@ import ExecBody from "./pages/Organisation/Exec_Body";
 import ImplementationCommittees from "./pages/Organisation/Implementation_committees";
 import MainFooter from "./components/MainFooter/MainFooter";
 import React from "react";
-import {Box} from "@mui/material";
 
 let theme = createTheme({
     palette: {
@@ -36,8 +35,7 @@ function App() {
                 <Route exact path="/exec_body" component={ExecBody}/>
                 <Route exact path="/implementation_committees" component={ImplementationCommittees}/>
             </Switch>
-             {/*box to provide the margin to the top of footer*/}
-            <Box height={50}/>
+            {/*box to provide the margin to the top of footer*/}
             <MainFooter/>
         </ThemeProvider>
     );

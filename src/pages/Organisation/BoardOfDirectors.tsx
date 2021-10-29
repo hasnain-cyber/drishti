@@ -36,7 +36,7 @@ const Card = (cardDetails: { imageUrl: string, imageTitle: string, imageText: st
 
 const BoardOfDirectors = () => {
     return (
-        <Box>
+        <Box paddingBottom={5}>
             <Typography
                 variant="h6"
                 textAlign={"center"}
