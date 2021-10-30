@@ -126,7 +126,7 @@ const LandingPage = () => {
             {/*wrapped in a div to facilitate the sticky position of first section*/}
             <Box position={'relative'} zIndex={1} sx={{ backgroundColor: 'white' }}>
                 {/* 2nd section */}
-                <Box padding={5} display={"flex"} flexDirection={"column"} gap={5}>
+                <Box padding={5} display={"flex"} flexDirection={"column"} gap={5} id={'landing-page-about'}>
                     <Typography
                         variant="h3"
                         textAlign={"center"}
@@ -321,6 +321,7 @@ const LandingPage = () => {
 
                 {/*4th section*/}
                 <Box
+                    id={'landing-page-activities'}
                     padding={"2%"}
                     display={"flex"}
                     flexDirection={"column"}

@@ -1,6 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import '../../index.scss'
 import './MainFooter.scss'
+import Facebook from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import {Instagram, LinkedIn} from "@material-ui/icons";
 
 const LinkText = (props: { linkPath: string, linkText: string }) => {
     return (
@@ -22,7 +25,12 @@ const MainFooter = () => {
                 <Typography>Email : officedrishti [at] iiti.ac.in</Typography>
                 <Typography>Phone : +91-731-660 3372(Extn- 3372)</Typography>
                 <Typography>Website : drishticps.iiti.ac.in</Typography>
-
+                <Box id={'main-footer-contact-us'} display={'flex'} gap={2} paddingY={'1%'}>
+                    <a className={'footer-facebook-icon'} href={'/'}><Facebook fontSize={'large'} /></a>
+                    <a className={'footer-twitter-icon'} href={'/'}><TwitterIcon fontSize={'large'} /></a>
+                    <a className={'footer-instagram-icon'} href={'/'}><Instagram fontSize={'large'} /></a>
+                    <a className={'footer-linkedIn-icon'} href={'/'}><LinkedIn fontSize={'large'} /></a>
+                </Box>
             </Box>
             <Box display={'flex'} flexDirection={'column'} flex={1}>
                 <Typography variant={'h4'} fontFamily={'Oswald'} color={'primary.dark'} marginBottom={1}
