@@ -8,10 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { Link, useHistory } from "react-router-dom";
 import "../../index.scss";
-import '../Navbar/Navbar.scss';
-import Facebook from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import { Instagram, LinkedIn } from "@material-ui/icons";
+import '../Navbar/Navbar.scss'
 
 const navbarLinksList = [
     {
@@ -164,7 +161,7 @@ const DesktopNavbarLinks = (linksObject: {
     )
 }
 
-const Navbar = () => {
+const Navbar2 = () => {
     const [openDrawer, setOpenDrawer] = useState(false)
     const [navbarColor, setNavbarColor] = useState('transparent')
 
@@ -199,47 +196,12 @@ const Navbar = () => {
         <>
             {/* main appbar */}
             <AppBar
-                position={isLandingPage ? 'fixed' : 'sticky'}
+                position={isLandingPage ? 'fixed' : 'relative'}
                 elevation={0}
                 sx={{ background: isLandingPage ? navbarColor : 'primary.main', transition: '.2s' }}
             >
-                <Toolbar>
-                    <Box className={'mobile-view-drawer-button'}>
-                        <IconButton
-                            color="inherit"
-                            aria-label="Open Drawer"
-                            onClick={() => setOpenDrawer(true)}
-                        >
-                            <MenuIcon fontSize={"large"} />
-                        </IconButton>
-                    </Box>
-                    <Link to={"/"} style={{
-                        textDecoration: "none",
-                        color: "inherit",
-                        display: 'flex',
-                        flex: 1,
-                        alignItems: 'center'
-                    }}>
-                        <img
-                            src={"/assets/drishti_logo.png"}
-                            width="75"
-                            height="55"
-                            style={{ margin: 10, backgroundColor: 'white', padding: 5, borderRadius: 5 }}
-                            alt={'drishti_logo'} />
-                        <Typography variant="h6" fontFamily={"Ubuntu"} textAlign={'center'} fontSize={25}>
-                            IITI DRISHTI CPS FOUNDATION
-                        </Typography>
-                    </Link>
-                    <Box display={'flex'} gap={2} paddingY={'1%'}>
-                        <a className={'footer-facebook-icon'} href={'/'}><Facebook fontSize={'large'} /></a>
-                        <a className={'footer-twitter-icon'} href={'/'}><TwitterIcon fontSize={'large'} /></a>
-                        <a className={'footer-instagram-icon'} href={'/'}><Instagram fontSize={'large'} /></a>
-                        <a className={'footer-linkedIn-icon'} href={'/'}><LinkedIn fontSize={'large'} /></a>
-                    </Box>
 
-                    {/*rhs*/}
 
-                </Toolbar>
                 <Box className={'desktop-view-navbar-links'} >
                     {DesktopNavbarLinks(navbarLinksList[0])}
                     {DesktopNavbarLinks(navbarLinksList[1])}
@@ -280,4 +242,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Navbar2;

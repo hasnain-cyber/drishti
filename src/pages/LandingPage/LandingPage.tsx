@@ -1,7 +1,8 @@
-import {Box, Paper, Tab, Tabs, Typography} from "@mui/material";
+import { Box, Paper, Tab, Tabs, Typography } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
-import {useState} from "react";
+import { useState } from "react";
 import "./LandingPage.scss";
+import Button from '@mui/material/Button';
 
 const tabsDataList = [
     {
@@ -63,7 +64,7 @@ const TabPanel = (props: { value: number }) => {
     return (
         <Paper
             elevation={5}
-            sx={{padding: "5%", backgroundColor: "primary.dark"}}
+            sx={{ padding: "5%", backgroundColor: "primary.dark" }}
         >
             <Typography maxWidth={800} color={"white"} textAlign={"center"}>
                 {tabsDataList[props.value].text}
@@ -101,7 +102,7 @@ const LandingPage = () => {
                         marginBottom={5}
                         color={"white"}
                     >
-                        WELCOME TO DRISHTI
+                        WELCOME!
                     </Typography>
                     <Typography
                         fontSize={18}
@@ -123,7 +124,7 @@ const LandingPage = () => {
             </Box>
 
             {/*wrapped in a div to facilitate the sticky position of first section*/}
-            <Box position={'relative'} zIndex={1} sx={{backgroundColor: 'white'}}>
+            <Box position={'relative'} zIndex={1} sx={{ backgroundColor: 'white' }}>
                 {/* 2nd section */}
                 <Box padding={5} display={"flex"} flexDirection={"column"} gap={5}>
                     <Typography
@@ -131,7 +132,7 @@ const LandingPage = () => {
                         textAlign={"center"}
                         fontFamily={"Oswald"}
                         color={"secondary.dark"}
-                        sx={{textDecoration: "underline"}}
+                        sx={{ textDecoration: "underline" }}
                     >
                         ABOUT US
                     </Typography>
@@ -144,28 +145,13 @@ const LandingPage = () => {
                         {Card({
                             title: "VISION",
                             text:
-                                "Modelling, simulation and decision making in cyber physical Industrial systems" +
-                                "Modeling and performance optimization of Energy systems" +
-                                "CPS-based Prognostics and health management (PHM)" +
-                                "Enabling precise and sustainable agriculture using CPS" +
-                                "Modeling and simulation for Biological and healthcare systems" +
-                                "Environmental systems modeling" +
-                                "Dynamical systems modeling and simulation" +
-                                "Modeling and simulation of material behavior" +
-                                "Social behavior modeling and simulation",
+                                "The Technology Innovation Hub (TIH) at IIT Indore named IITI DRISHTI CPS Foundation, has the vision to become a one-stop shop for CPS solutions with a specific focus on system simulation, modelling and visualisation. The TIH aims to lead the technology development endeavours in the country towards evolving systematic process models for optimal design, development, and implementation of CPSs in industrial and social settings. IITI DRISHTI CPS Foundation aims to evolve as a self sustainable hub and intends to consistently support initiatives of the Government of India such as Digital India, AatmaNirbhar Bharat, Make in India, Smart Cities, Sugamya Bharat Abhiyaan, and National Education Policy, and various other immediate and long term technology needs of the country."
                         })}
                         {Card({
                             title: "MISSION",
                             text:
-                                "Modelling, simulation and decision making in cyber physical Industrial systems" +
-                                "Modeling and performance optimization of Energy systems" +
-                                "CPS-based Prognostics and health management (PHM)" +
-                                "Enabling precise and sustainable agriculture using CPS" +
-                                "Modeling and simulation for Biological and healthcare systems" +
-                                "Environmental systems modeling" +
-                                "Dynamical systems modeling and simulation" +
-                                "Modeling and simulation of material behavior" +
-                                "Social behavior modeling and simulation",
+                                "IITI DRISHTI CPS Foundation intends to realise its vision by harnessing the know-how of academia and industry in a synergistic set-up. The ideas evolving from this set-up would be realised practically through incubation of 'start-up' endeavours and investment in human-resource development, supporting patenting, licensing, commercialisation, and implementation of technology solutions and ideas. The TIH intends to work closely with local and global organisations particularly in a hub and spoke setting to effectively meet its aims and objectives."
+
                         })}
                         {Card({
                             title: "THRUST AREAS",
@@ -191,7 +177,7 @@ const LandingPage = () => {
                         fontFamily={"Oswald"}
                         marginBottom={5}
                         color={"secondary.dark"}
-                        sx={{textDecoration: "underline"}}
+                        sx={{ textDecoration: "underline" }}
                     >
                         ANNOUNCEMENTS
                     </Typography>
@@ -213,7 +199,7 @@ const LandingPage = () => {
                                 src={"/assets/landingPageCarousel/carousel_pic1.jpg"}
                                 alt="carousel_pic1"
                                 width={400}
-                                style={{maxWidth: "95%", border: "2px solid black"}}
+                                style={{ maxWidth: "95%", border: "2px solid black" }}
                             />
                             <Typography
                                 variant="h6"
@@ -242,7 +228,7 @@ const LandingPage = () => {
                                 src={"/assets/landingPageCarousel/carousel_pic2.jpg"}
                                 alt="carousel_pic2"
                                 width={400}
-                                style={{maxWidth: "95%", border: "2px solid black"}}
+                                style={{ maxWidth: "95%", border: "2px solid black" }}
                             />
                             <Typography
                                 variant="h6"
@@ -271,7 +257,7 @@ const LandingPage = () => {
                                 src={"/assets/logo.png"}
                                 alt="drishti_logo"
                                 width={300}
-                                style={{maxWidth: "95%", border: "2px solid black"}}
+                                style={{ maxWidth: "95%", border: "2px solid black" }}
                             />
                             <Typography
                                 variant="h6"
@@ -309,7 +295,7 @@ const LandingPage = () => {
                                 src={"/assets/logo.png"}
                                 alt="drishti_logo"
                                 width={300}
-                                style={{maxWidth: "95%", border: "2px solid black"}}
+                                style={{ maxWidth: "95%", border: "2px solid black" }}
                             />
                             <Typography
                                 variant="h6"
@@ -327,7 +313,7 @@ const LandingPage = () => {
                                 fontWeight={"bold"}
                                 color={"white"}
                             >
-                                Newsletter
+                                <Button variant="contained" href="http://drishticps.iiti.ac.in/docs/Drishti%20Newsletter,%20Aug%2021.pdf">Newsletter</Button>
                             </Typography>
                         </Paper>
                     </Carousel>
@@ -359,7 +345,7 @@ const LandingPage = () => {
                         fontFamily={"Oswald"}
                         color={"  white"}
                         marginBottom={5}
-                        sx={{textDecoration: "underline"}}
+                        sx={{ textDecoration: "underline" }}
                     >
                         ACTIVITIES
                     </Typography>
@@ -380,10 +366,10 @@ const LandingPage = () => {
                             variant={"fullWidth"}
                         >
                             {tabsDataList.map((element) => (
-                                <Tab key={element.title} label={element.title}/>
+                                <Tab key={element.title} label={element.title} />
                             ))}
                         </Tabs>
-                        <TabPanel value={tabsValue}/>
+                        <TabPanel value={tabsValue} />
                     </Box>
                 </Box>
             </Box>
