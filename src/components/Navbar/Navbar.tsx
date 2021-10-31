@@ -8,6 +8,9 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import {Link, useHistory} from "react-router-dom";
 import "../../index.scss";
 import '../Navbar/Navbar.scss';
+import Facebook from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import {Instagram, LinkedIn} from "@material-ui/icons";
 
 const navbarLinksList = [
     {
@@ -129,13 +132,13 @@ const MobileNavbarLinksList = (linksObject: {
     );
 };
 
-const DesktopPrimaryNavbarLinks = (linksObject: {
+const DesktopSecondaryNavbarLinks = (linksObject: {
     subheaderTitle: string;
     subLinks: {
         linkPath: string;
         linkText: string;
     }[]
-}) => {
+}, fontColor: string) => {
     const ref = useRef<HTMLElement>()
     const [open, setOpen] = useState(false)
 
@@ -150,7 +153,8 @@ const DesktopPrimaryNavbarLinks = (linksObject: {
 
     return (
         <Box marginX={1} ref={ref} sx={{position: 'relative'}}>
-            <span className={'primary-navbar-desktop-subheader'}>{linksObject.subheaderTitle}</span>
+            <span className={'secondary-navbar-desktop-subheader'}
+                  style={{color: fontColor}}>{linksObject.subheaderTitle}</span>
             <Box display={'flex'} flexDirection={'column'} bgcolor={'white'} width={200}
                  sx={{
                      position: 'absolute',
@@ -238,15 +242,19 @@ const Navbar = () => {
                     </Link>
 
                     {/*rhs*/}
-                    <Box className={'desktop-view-navbar-links'}>
-                        {DesktopPrimaryNavbarLinks(navbarLinksList[0])}
-                        {DesktopPrimaryNavbarLinks(navbarLinksList[1])}
-                        {DesktopPrimaryNavbarLinks(navbarLinksList[2])}
-                        {DesktopPrimaryNavbarLinks(navbarLinksList[3])}
+                    <Box className={'main-navbar-contact-us'} gap={2} paddingY={'1%'}>
+                        <a className={'navbar-facebook-icon'} href={'/'}><Facebook fontSize={'large'}/></a>
+                        <a className={'navbar-twitter-icon'} href={'/'}><TwitterIcon fontSize={'large'}/></a>
+                        <a className={'navbar-instagram-icon'} href={'/'}><Instagram fontSize={'large'}/></a>
+                        <a className={'navbar-linkedIn-icon'} href={'/'}><LinkedIn fontSize={'large'}/></a>
                     </Box>
                 </Box>
                 <Box className={'desktop-secondary-navbar'}
                      bgcolor={isLandingPage && transparentNavbar ? 'transparent' : 'white'}>
+                    {DesktopSecondaryNavbarLinks(navbarLinksList[0], isLandingPage && transparentNavbar ? 'white' : 'black')}
+                    {DesktopSecondaryNavbarLinks(navbarLinksList[1], isLandingPage && transparentNavbar ? 'white' : 'black')}
+                    {DesktopSecondaryNavbarLinks(navbarLinksList[2], isLandingPage && transparentNavbar ? 'white' : 'black')}
+                    {DesktopSecondaryNavbarLinks(navbarLinksList[3], isLandingPage && transparentNavbar ? 'white' : 'black')}
                     <span style={{color: isLandingPage && transparentNavbar ? 'white' : 'black'}}
                           className={'secondary-navbar-desktop-subheader'}
                           onClick={() => {

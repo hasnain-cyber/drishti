@@ -26,10 +26,10 @@ const MainFooter = () => {
                 <Typography>Phone : +91-731-660 3372(Extn- 3372)</Typography>
                 <Typography>Website : drishticps.iiti.ac.in</Typography>
                 <Box id={'main-footer-contact-us'} display={'flex'} gap={2} paddingY={'1%'}>
-                    <a className={'footer-facebook-icon'} href={'/'}><Facebook fontSize={'large'} /></a>
-                    <a className={'footer-twitter-icon'} href={'/'}><TwitterIcon fontSize={'large'} /></a>
-                    <a className={'footer-instagram-icon'} href={'/'}><Instagram fontSize={'large'} /></a>
-                    <a className={'footer-linkedIn-icon'} href={'/'}><LinkedIn fontSize={'large'} /></a>
+                    <a className={'footer-facebook-icon'} href={'/'}><Facebook fontSize={'large'}/></a>
+                    <a className={'footer-twitter-icon'} href={'/'}><TwitterIcon fontSize={'large'}/></a>
+                    <a className={'footer-instagram-icon'} href={'/'}><Instagram fontSize={'large'}/></a>
+                    <a className={'footer-linkedIn-icon'} href={'/'}><LinkedIn fontSize={'large'}/></a>
                 </Box>
             </Box>
             <Box display={'flex'} flexDirection={'column'} flex={1}>

@@ -1,38 +1,5 @@
 @import "../../index";
 
-.primary-navbar-desktop-subheader {
-  font-family: "Prompt", cursive;
-
-  padding: 6px;
-
-  position: relative;
-
-  cursor: pointer;
-
-  &::before {
-    content: "";
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    transform-origin: center;
-    transform: scaleX(0);
-
-    transition: 0.4s;
-  }
-
-  &:hover,
-  &:focus {
-    &::before {
-      transform: scaleX(1);
-    }
-  }
-}
-
 .secondary-navbar-desktop-subheader {
   font-family: "Prompt", cursive;
   text-decoration: none; // for link inconsistency
@@ -46,7 +13,7 @@
     content: "";
 
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
 
     width: 100%;
@@ -75,6 +42,7 @@
 .desktop-secondary-navbar {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 1px 0;
 }
 
@@ -91,6 +59,35 @@
   padding: 10px;
 }
 
+// social icons
+.main-navbar-contact-us {
+  display: flex;
+}
+
+.navbar-facebook-icon,
+.navbar-twitter-icon,
+.navbar-instagram-icon,
+.navbar-linkedIn-icon {
+  color: white;
+  transition: .2s;
+}
+
+.navbar-facebook-icon:hover {
+  color: #4267b2;
+}
+
+.navbar-twitter-icon:hover {
+  color: #1da1f2;
+}
+
+.navbar-instagram-icon:hover {
+  color: #8a3ab9;
+}
+
+.navbar-linkedIn-icon:hover {
+  color: #0077b5;
+}
+
 @media (max-width: 900px) {
   .mobile-view-drawer-button {
     display: inline-block;
@@ -101,6 +98,12 @@
   }
 
   .desktop-secondary-navbar {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .main-navbar-contact-us {
     display: none;
   }
 }
