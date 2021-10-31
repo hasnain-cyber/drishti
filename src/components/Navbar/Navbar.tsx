@@ -68,7 +68,7 @@ const navbarLinksList = [
                 linkPath: "",
                 linkText: "Webinar",
             },
-            {linkPath: "", linkText: "Infrastructure"},
+            {linkPath: "infrastructure", linkText: "Infrastructure"},
             {
                 linkPath: "",
                 linkText: "Visit of dignitaries",
@@ -96,7 +96,7 @@ const MobileNavbarLinksList = (linksObject: {
         linkPath: string;
         linkText: string;
     }[];
-}) => {
+}, setOpenDrawer: Function) => {
     const history = useHistory();
 
     return (
@@ -116,6 +116,7 @@ const MobileNavbarLinksList = (linksObject: {
                 <ListItem key={element.linkPath}>
                     <ListItemButton
                         onClick={() => {
+                            setOpenDrawer(false)
                             history.push("/" + element.linkPath);
                         }}
                         sx={{fontFamily: "Prompt"}}
@@ -199,107 +200,105 @@ const Navbar = () => {
         }
     }
 
-    console.log(isLandingPage && transparentNavbar ? 'transparent' : '#B2040F')
-
     return (
         <>
             {/* main appbar */}
-                <AppBar
-                    position={isLandingPage ? 'fixed' : 'sticky'}
-                    elevation={isLandingPage && transparentNavbar ? 0 : 5}
-                    sx={{background: 'transparent'}}>
-                    <Box display={'flex'} alignItems={'center'} paddingX={2} paddingY={1}
-                         bgcolor={isLandingPage && transparentNavbar ? 'transparent' : '#B2040F'}
-                         sx={{transition: '.2s'}}>
-                        <Box className={'mobile-view-drawer-button'}>
-                            <IconButton
-                                color="inherit"
-                                aria-label="Open Drawer"
-                                onClick={() => setOpenDrawer(true)}
-                            >
-                                <MenuIcon fontSize={"large"}/>
-                            </IconButton>
-                        </Box>
-                        <Link to={"/"} style={{
-                            textDecoration: "none",
-                            color: "inherit",
-                            display: 'flex',
-                            flex: 1,
-                            alignItems: 'center'
-                        }}>
-                            <img
-                                src={"/assets/drishti_logo.png"}
-                                width="75"
-                                height="55"
-                                style={{margin: 10, backgroundColor: 'white', padding: 5, borderRadius: 5}}
-                                alt={'drishti_logo'}/>
-                            <Typography variant="h6" fontFamily={"Ubuntu"} textAlign={'center'} fontSize={25}>
-                                IITI DRISHTI CPS FOUNDATION
-                            </Typography>
-                        </Link>
-
-                        {/*rhs*/}
-                        <Box className={'desktop-view-navbar-links'}>
-                            {DesktopPrimaryNavbarLinks(navbarLinksList[0])}
-                            {DesktopPrimaryNavbarLinks(navbarLinksList[1])}
-                            {DesktopPrimaryNavbarLinks(navbarLinksList[2])}
-                            {DesktopPrimaryNavbarLinks(navbarLinksList[3])}
-                        </Box>
+            <AppBar
+                position={isLandingPage ? 'fixed' : 'sticky'}
+                elevation={isLandingPage && transparentNavbar ? 0 : 5}
+                sx={{background: 'transparent'}}>
+                <Box display={'flex'} alignItems={'center'} paddingX={2} paddingY={1}
+                     bgcolor={isLandingPage && transparentNavbar ? 'transparent' : '#B2040F'}
+                     sx={{transition: '.2s'}}>
+                    <Box className={'mobile-view-drawer-button'}>
+                        <IconButton
+                            color="inherit"
+                            aria-label="Open Drawer"
+                            onClick={() => setOpenDrawer(true)}
+                        >
+                            <MenuIcon fontSize={"large"}/>
+                        </IconButton>
                     </Box>
-                    <Box className={'desktop-secondary-navbar'}
-                         bgcolor={isLandingPage && transparentNavbar ? 'transparent' : 'white'}>
+                    <Link to={"/"} style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        display: 'flex',
+                        flex: 1,
+                        alignItems: 'center'
+                    }}>
+                        <img
+                            src={"/assets/drishti_logo.png"}
+                            width="75"
+                            height="55"
+                            style={{margin: 10, backgroundColor: 'white', padding: 5, borderRadius: 5}}
+                            alt={'drishti_logo'}/>
+                        <Typography variant="h6" fontFamily={"Ubuntu"} textAlign={'center'} fontSize={25}>
+                            IITI DRISHTI CPS FOUNDATION
+                        </Typography>
+                    </Link>
+
+                    {/*rhs*/}
+                    <Box className={'desktop-view-navbar-links'}>
+                        {DesktopPrimaryNavbarLinks(navbarLinksList[0])}
+                        {DesktopPrimaryNavbarLinks(navbarLinksList[1])}
+                        {DesktopPrimaryNavbarLinks(navbarLinksList[2])}
+                        {DesktopPrimaryNavbarLinks(navbarLinksList[3])}
+                    </Box>
+                </Box>
+                <Box className={'desktop-secondary-navbar'}
+                     bgcolor={isLandingPage && transparentNavbar ? 'transparent' : 'white'}>
                     <span style={{color: isLandingPage && transparentNavbar ? 'white' : 'black'}}
                           className={'secondary-navbar-desktop-subheader'}
                           onClick={() => {
                               document.getElementById('landing-page-about')?.scrollIntoView()
                           }}>About</span>
-                        <Link style={{color: isLandingPage && transparentNavbar ? 'white' : 'black'}}
-                              className={'secondary-navbar-desktop-subheader'}
-                              to={'/news'}>News and
-                            Events</Link>
-                        <span style={{color: isLandingPage && transparentNavbar ? 'white' : 'black'}}
-                              className={'secondary-navbar-desktop-subheader'}
-                              onClick={() => {
-                                  document.getElementById('landing-page-activities')?.scrollIntoView()
-                              }}>Activities
+                    <Link style={{color: isLandingPage && transparentNavbar ? 'white' : 'black'}}
+                          className={'secondary-navbar-desktop-subheader'}
+                          to={'/news'}>News and
+                        Events</Link>
+                    <span style={{color: isLandingPage && transparentNavbar ? 'white' : 'black'}}
+                          className={'secondary-navbar-desktop-subheader'}
+                          onClick={() => {
+                              document.getElementById('landing-page-activities')?.scrollIntoView()
+                          }}>Activities
                     </span>
-                        <span style={{color: isLandingPage && transparentNavbar ? 'white' : 'black'}}
-                              className={'secondary-navbar-desktop-subheader'}
-                              onClick={() => {
-                                  document.getElementById('main-footer-contact-us')?.scrollIntoView()
-                              }}>Contact Us</span>
-                    </Box>
-                </AppBar>
+                    <span style={{color: isLandingPage && transparentNavbar ? 'white' : 'black'}}
+                          className={'secondary-navbar-desktop-subheader'}
+                          onClick={() => {
+                              document.getElementById('main-footer-contact-us')?.scrollIntoView()
+                          }}>Contact Us</span>
+                </Box>
+            </AppBar>
 
-                {/* drawer */}
-                <Drawer
-                    sx={{
+            {/* drawer */}
+            <Drawer
+                sx={{
+                    width: "100vw",
+                    maxWidth: 500,
+                    "& .MuiDrawer-paper": {
                         width: "100vw",
                         maxWidth: 500,
-                        "& .MuiDrawer-paper": {
-                            width: "100vw",
-                            maxWidth: 500,
-                        },
-                    }}
-                    variant="temporary"
-                    anchor="left"
-                    open={openDrawer}
-                    onClose={() => setOpenDrawer(false)}
-                >
-                    <Box display={"flex"} justifyContent={"end"}>
-                        <IconButton onClick={() => setOpenDrawer(false)}>
-                            <ChevronLeftIcon/>
-                        </IconButton>
-                    </Box>
-                    <Divider/>
+                    },
+                }}
+                variant="temporary"
+                anchor="left"
+                open={openDrawer}
+                onClose={() => setOpenDrawer(false)}
+            >
+                <Box display={"flex"} justifyContent={"end"}>
+                    <IconButton onClick={() => setOpenDrawer(false)}>
+                        <ChevronLeftIcon/>
+                    </IconButton>
+                </Box>
+                <Divider/>
 
-                    {/* organization list */}
-                    {MobileNavbarLinksList(navbarLinksList[0])}
-                    {MobileNavbarLinksList(navbarLinksList[1])}
-                    {MobileNavbarLinksList(navbarLinksList[2])}
-                    {MobileNavbarLinksList(navbarLinksList[3])}
-                    {MobileNavbarLinksList(navbarLinksList[4])}
-                </Drawer>
+                {/* organization list */}
+                {MobileNavbarLinksList(navbarLinksList[0], setOpenDrawer)}
+                {MobileNavbarLinksList(navbarLinksList[1], setOpenDrawer)}
+                {MobileNavbarLinksList(navbarLinksList[2], setOpenDrawer)}
+                {MobileNavbarLinksList(navbarLinksList[3], setOpenDrawer)}
+                {MobileNavbarLinksList(navbarLinksList[4], setOpenDrawer)}
+            </Drawer>
         </>
     );
 };
