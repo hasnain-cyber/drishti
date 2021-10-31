@@ -1,6 +1,6 @@
-import {Route, Switch} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import LandingPage from "./pages/LandingPage/LandingPage";
-import {createTheme, ThemeProvider} from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import GoverningBody from "./pages/NavbarLinks/Organisation/GoverningBody";
 import Navbar from "./components/Navbar/Navbar";
 import BoardOfDirectors from "./pages/NavbarLinks/Organisation/BoardOfDirectors";
@@ -9,6 +9,7 @@ import ImplementationCommittees from "./pages/NavbarLinks/Organisation/Implement
 import MainFooter from "./components/MainFooter/MainFooter";
 import React from "react";
 import Infrastructure from "./pages/NavbarLinks/Gallery/Infrastructure/Infrastructure";
+import Press from "./pages/NavbarLinks/Gallery/Press/Press";
 
 let theme = createTheme({
     palette: {
@@ -28,22 +29,23 @@ let theme = createTheme({
 function App() {
     return (
         <ThemeProvider theme={theme}>
-            <Navbar/>
+            <Navbar />
 
             <Switch>
-                <Route exact path="/" component={LandingPage}/>
+                <Route exact path="/" component={LandingPage} />
 
                 {/*organisation links*/}
-                <Route exact path="/gov_body" component={GoverningBody}/>
-                <Route exact path="/bod" component={BoardOfDirectors}/>
-                <Route exact path="/exec_body" component={ExecBody}/>
-                <Route exact path="/implementation_committees" component={ImplementationCommittees}/>
+                <Route exact path="/gov_body" component={GoverningBody} />
+                <Route exact path="/bod" component={BoardOfDirectors} />
+                <Route exact path="/exec_body" component={ExecBody} />
+                <Route exact path="/implementation_committees" component={ImplementationCommittees} />
 
                 {/*gallery links*/}
-                <Route exact path="/infrastructure" component={Infrastructure}/>
+                <Route exact path="/infrastructure" component={Infrastructure} />
+                <Route exact path="/pressRelease" component={Press} />
             </Switch>
             {/*box to provide the margin to the top of footer*/}
-            <MainFooter/>
+            <MainFooter />
         </ThemeProvider>
     );
 }

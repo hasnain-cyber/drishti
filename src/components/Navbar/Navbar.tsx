@@ -1,27 +1,27 @@
-import {Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListSubheader} from "@mui/material";
+import { Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListSubheader } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import {Link, useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "../../index.scss";
 import '../Navbar/Navbar.scss';
 import Facebook from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import {Instagram, LinkedIn} from "@material-ui/icons";
+import { Instagram, LinkedIn } from "@material-ui/icons";
 
 const navbarLinksList = [
     {
         subheaderTitle: "Organization",
         subLinks: [
-            {linkPath: "gov_body", linkText: "Hub Governing Body"},
+            { linkPath: "gov_body", linkText: "Hub Governing Body" },
             {
                 linkPath: "bod",
                 linkText: "Board of Directors",
             },
-            {linkPath: "exec_body", linkText: "Executive Body"},
+            { linkPath: "exec_body", linkText: "Executive Body" },
             {
                 linkPath: "implementation_committees",
                 linkText: "Implementation Committees",
@@ -31,12 +31,12 @@ const navbarLinksList = [
     {
         subheaderTitle: "Partners",
         subLinks: [
-            {linkPath: "", linkText: "Industries"},
+            { linkPath: "", linkText: "Industries" },
             {
                 linkPath: "",
                 linkText: "Public Sectors",
             },
-            {linkPath: "", linkText: "DRDO/ISRO/ORD Factories"},
+            { linkPath: "", linkText: "DRDO/ISRO/ORD Factories" },
             {
                 linkPath: "",
                 linkText: "Startups",
@@ -50,45 +50,45 @@ const navbarLinksList = [
     {
         subheaderTitle: "Facilities",
         subLinks: [
-            {linkPath: "", linkText: "Spoke LOC with expertise"},
+            { linkPath: "", linkText: "Spoke LOC with expertise" },
             {
                 linkPath: "",
                 linkText: "Research Park",
             },
-            {linkPath: "", linkText: "Testing Facilities"},
+            { linkPath: "", linkText: "Testing Facilities" },
             {
                 linkPath: "",
                 linkText: "Labs",
             },
-            {linkPath: "", linkText: "CPS Resource Center"},
+            { linkPath: "", linkText: "CPS Resource Center" },
         ],
     },
     {
         subheaderTitle: "Gallery",
         subLinks: [
-            {linkPath: "", linkText: "Course"},
+            { linkPath: "", linkText: "Course" },
             {
                 linkPath: "",
                 linkText: "Webinar",
             },
-            {linkPath: "infrastructure", linkText: "Infrastructure"},
+            { linkPath: "infrastructure", linkText: "Infrastructure" },
             {
                 linkPath: "",
                 linkText: "Visit of dignitaries",
             },
-            {linkPath: "", linkText: "Appreciations/Citations"},
+            { linkPath: "", linkText: "Appreciations/Citations" },
             {
-                linkPath: "",
+                linkPath: "pressRelease",
                 linkText: "Press Release",
             },
-            {linkPath: "", linkText: "Miscellaneous"},
-            {linkPath: "", linkText: "Newsletter"},
+            { linkPath: "", linkText: "Miscellaneous" },
+            { linkPath: "", linkText: "Newsletter" },
         ],
     },
     {
         subheaderTitle: 'Miscellaneous',
         subLinks: [
-            {linkPath: "home", linkText: "News and Events"},
+            { linkPath: "home", linkText: "News and Events" },
         ]
     }
 ]
@@ -122,7 +122,7 @@ const MobileNavbarLinksList = (linksObject: {
                             setOpenDrawer(false)
                             history.push("/" + element.linkPath);
                         }}
-                        sx={{fontFamily: "Prompt"}}
+                        sx={{ fontFamily: "Prompt" }}
                     >
                         {element.linkText}
                     </ListItemButton>
@@ -152,20 +152,20 @@ const DesktopSecondaryNavbarLinks = (linksObject: {
     }, [])
 
     return (
-        <Box marginX={1} ref={ref} sx={{position: 'relative'}}>
+        <Box marginX={1} ref={ref} sx={{ position: 'relative' }}>
             <span className={'secondary-navbar-desktop-subheader'}
-                  style={{color: fontColor}}>{linksObject.subheaderTitle}</span>
+                style={{ color: fontColor }}>{linksObject.subheaderTitle}</span>
             <Box display={'flex'} flexDirection={'column'} bgcolor={'white'} width={200}
-                 sx={{
-                     position: 'absolute',
-                     right: 0,
-                     transition: '.5s',
-                     opacity: open ? 1 : 0,
-                     pointerEvents: open ? 'auto' : 'none'
-                 }}>
+                sx={{
+                    position: 'absolute',
+                    right: 0,
+                    transition: '.5s',
+                    opacity: open ? 1 : 0,
+                    pointerEvents: open ? 'auto' : 'none'
+                }}>
                 {linksObject.subLinks.map(element => <Link key={element.linkText}
-                                                           className={'navbar-subLink'}
-                                                           to={element.linkPath}>{element.linkText}</Link>)}
+                    className={'navbar-subLink'}
+                    to={element.linkPath}>{element.linkText}</Link>)}
             </Box>
         </Box>
     )
@@ -210,17 +210,17 @@ const Navbar = () => {
             <AppBar
                 position={isLandingPage ? 'fixed' : 'sticky'}
                 elevation={isLandingPage && transparentNavbar ? 0 : 5}
-                sx={{background: 'transparent'}}>
+                sx={{ background: 'transparent' }}>
                 <Box display={'flex'} alignItems={'center'} paddingX={2} paddingY={1}
-                     bgcolor={isLandingPage && transparentNavbar ? 'transparent' : '#B2040F'}
-                     sx={{transition: '.2s'}}>
+                    bgcolor={isLandingPage && transparentNavbar ? 'transparent' : '#B2040F'}
+                    sx={{ transition: '.2s' }}>
                     <Box className={'mobile-view-drawer-button'}>
                         <IconButton
                             color="inherit"
                             aria-label="Open Drawer"
                             onClick={() => setOpenDrawer(true)}
                         >
-                            <MenuIcon fontSize={"large"}/>
+                            <MenuIcon fontSize={"large"} />
                         </IconButton>
                     </Box>
                     <Link to={"/"} style={{
@@ -234,8 +234,8 @@ const Navbar = () => {
                             src={"/assets/drishti_logo.png"}
                             width="75"
                             height="55"
-                            style={{margin: 10, backgroundColor: 'white', padding: 5, borderRadius: 5}}
-                            alt={'drishti_logo'}/>
+                            style={{ margin: 10, backgroundColor: 'white', padding: 5, borderRadius: 5 }}
+                            alt={'drishti_logo'} />
                         <Typography variant="h6" fontFamily={"Ubuntu"} textAlign={'center'} fontSize={25}>
                             IITI DRISHTI CPS FOUNDATION
                         </Typography>
@@ -243,38 +243,38 @@ const Navbar = () => {
 
                     {/*rhs*/}
                     <Box className={'main-navbar-contact-us'} gap={2} paddingY={'1%'}>
-                        <a className={'navbar-facebook-icon'} href={'/'}><Facebook fontSize={'large'}/></a>
-                        <a className={'navbar-twitter-icon'} href={'/'}><TwitterIcon fontSize={'large'}/></a>
-                        <a className={'navbar-instagram-icon'} href={'/'}><Instagram fontSize={'large'}/></a>
-                        <a className={'navbar-linkedIn-icon'} href={'/'}><LinkedIn fontSize={'large'}/></a>
+                        <a className={'navbar-facebook-icon'} href={'/'}><Facebook fontSize={'large'} /></a>
+                        <a className={'navbar-twitter-icon'} href={'/'}><TwitterIcon fontSize={'large'} /></a>
+                        <a className={'navbar-instagram-icon'} href={'/'}><Instagram fontSize={'large'} /></a>
+                        <a className={'navbar-linkedIn-icon'} href={'/'}><LinkedIn fontSize={'large'} /></a>
                     </Box>
                 </Box>
                 <Box className={'desktop-secondary-navbar'}
-                     bgcolor={isLandingPage && transparentNavbar ? 'transparent' : 'white'}>
+                    bgcolor={isLandingPage && transparentNavbar ? 'transparent' : 'white'}>
                     {DesktopSecondaryNavbarLinks(navbarLinksList[0], isLandingPage && transparentNavbar ? 'white' : 'black')}
                     {DesktopSecondaryNavbarLinks(navbarLinksList[1], isLandingPage && transparentNavbar ? 'white' : 'black')}
                     {DesktopSecondaryNavbarLinks(navbarLinksList[2], isLandingPage && transparentNavbar ? 'white' : 'black')}
                     {DesktopSecondaryNavbarLinks(navbarLinksList[3], isLandingPage && transparentNavbar ? 'white' : 'black')}
-                    <span style={{color: isLandingPage && transparentNavbar ? 'white' : 'black'}}
-                          className={'secondary-navbar-desktop-subheader'}
-                          onClick={() => {
-                              document.getElementById('landing-page-about')?.scrollIntoView()
-                          }}>About</span>
-                    <Link style={{color: isLandingPage && transparentNavbar ? 'white' : 'black'}}
-                          className={'secondary-navbar-desktop-subheader'}
-                          to={'/news'}>News and
+                    <span style={{ color: isLandingPage && transparentNavbar ? 'white' : 'black' }}
+                        className={'secondary-navbar-desktop-subheader'}
+                        onClick={() => {
+                            document.getElementById('landing-page-about')?.scrollIntoView()
+                        }}>About</span>
+                    <Link style={{ color: isLandingPage && transparentNavbar ? 'white' : 'black' }}
+                        className={'secondary-navbar-desktop-subheader'}
+                        to={'/news'}>News and
                         Events</Link>
-                    <span style={{color: isLandingPage && transparentNavbar ? 'white' : 'black'}}
-                          className={'secondary-navbar-desktop-subheader'}
-                          onClick={() => {
-                              document.getElementById('landing-page-activities')?.scrollIntoView()
-                          }}>Activities
+                    <span style={{ color: isLandingPage && transparentNavbar ? 'white' : 'black' }}
+                        className={'secondary-navbar-desktop-subheader'}
+                        onClick={() => {
+                            document.getElementById('landing-page-activities')?.scrollIntoView()
+                        }}>Activities
                     </span>
-                    <span style={{color: isLandingPage && transparentNavbar ? 'white' : 'black'}}
-                          className={'secondary-navbar-desktop-subheader'}
-                          onClick={() => {
-                              document.getElementById('main-footer-contact-us')?.scrollIntoView()
-                          }}>Contact Us</span>
+                    <span style={{ color: isLandingPage && transparentNavbar ? 'white' : 'black' }}
+                        className={'secondary-navbar-desktop-subheader'}
+                        onClick={() => {
+                            document.getElementById('main-footer-contact-us')?.scrollIntoView()
+                        }}>Contact Us</span>
                 </Box>
             </AppBar>
 
@@ -295,10 +295,10 @@ const Navbar = () => {
             >
                 <Box display={"flex"} justifyContent={"end"}>
                     <IconButton onClick={() => setOpenDrawer(false)}>
-                        <ChevronLeftIcon/>
+                        <ChevronLeftIcon />
                     </IconButton>
                 </Box>
-                <Divider/>
+                <Divider />
 
                 {/* organization list */}
                 {MobileNavbarLinksList(navbarLinksList[0], setOpenDrawer)}
