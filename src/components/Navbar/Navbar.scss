@@ -5,7 +5,9 @@
   text-decoration: none; // for link inconsistency
 
   position: relative;
-  padding: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 1.5rem;
 
   cursor: pointer;
 
@@ -69,7 +71,7 @@
 .navbar-instagram-icon,
 .navbar-linkedIn-icon {
   color: white;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .navbar-facebook-icon:hover {
