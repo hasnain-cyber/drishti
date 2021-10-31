@@ -81,7 +81,7 @@ const navbarLinksList = [
                 linkPath: "pressRelease",
                 linkText: "Press Release",
             },
-            { linkPath: "", linkText: "Miscellaneous" },
+            { linkPath: "misc", linkText: "Miscellaneous" },
             { linkPath: "", linkText: "Newsletter" },
         ],
     },

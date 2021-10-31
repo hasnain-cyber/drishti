@@ -10,6 +10,7 @@ import MainFooter from "./components/MainFooter/MainFooter";
 import React from "react";
 import Infrastructure from "./pages/NavbarLinks/Gallery/Infrastructure/Infrastructure";
 import Press from "./pages/NavbarLinks/Gallery/Press/Press";
+import Misc from "./pages/NavbarLinks/Gallery/Misc/Misc";
 
 let theme = createTheme({
     palette: {
@@ -43,6 +44,7 @@ function App() {
                 {/*gallery links*/}
                 <Route exact path="/infrastructure" component={Infrastructure} />
                 <Route exact path="/pressRelease" component={Press} />
+                <Route exact path="/misc" component={Misc} />
             </Switch>
             {/*box to provide the margin to the top of footer*/}
             <MainFooter />
